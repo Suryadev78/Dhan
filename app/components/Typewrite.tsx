@@ -2,17 +2,19 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { generateMnemonic } from "bip39";
 import React, { useState } from "react";
-import SolanaWalletComponent from "./SolanaWallet";
+
 export default function Header({
   setMnemonic,
 }: {
   setMnemonic: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const [buttonClicked, setButtonClicked] = useState(false);
+
   const generateMnemonicPhrase = async () => {
     //generate a 12 word mnemonic
     const mnemonic = await generateMnemonic();
     setMnemonic(mnemonic);
+
     setButtonClicked(true);
   };
   const words = [
@@ -24,6 +26,7 @@ export default function Header({
       text: "Your",
       className: "text-white dark:text-white",
     },
+
     {
       text: "Wallets",
       className: "text-white dark:text-white",
@@ -53,7 +56,6 @@ export default function Header({
           </button>
         )}
       </div>
-      <SolanaWalletComponent />
     </div>
   );
 }

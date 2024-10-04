@@ -1,13 +1,19 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
-export default function MnemonicDisplay({ words }: { words: string[] }) {
+import SolanaWalletComponent from "./SolanaWallet";
+
+export default function MnemonicDisplay({
+  words,
+  Mnemonic,
+}: {
+  words: string[];
+  Mnemonic: string;
+}) {
   const [copied, setCopied] = useState(false);
   const [mnemonic, setMnemonic] = useState<string[]>([]);
+  const generatedMnemonic = Mnemonic;
 
   useEffect(() => {
     const storedmnemonic = localStorage.getItem("mnemonic");
@@ -25,7 +31,7 @@ export default function MnemonicDisplay({ words }: { words: string[] }) {
   };
 
   return (
-    <div>
+    <div className="bg-black h">
       <Card onClick={copyToClipboard} className=" w-full max-w-2xl mx-auto">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-center">
@@ -51,6 +57,7 @@ export default function MnemonicDisplay({ words }: { words: string[] }) {
           </h3>
         </CardContent>
       </Card>
+      <SolanaWalletComponent generatedMnemonics={generatedMnemonic} />
     </div>
   );
 }
