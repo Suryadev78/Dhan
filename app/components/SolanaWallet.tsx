@@ -72,7 +72,9 @@ function SolanaWalletComponent({
   return (
     <div className="min-h-screen bg-black text-white p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">Your Wallets</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">
+          Your Solana Wallets
+        </h1>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {publicKeys.map((wallet, index) => (
             <Card
@@ -106,7 +108,7 @@ function SolanaWalletComponent({
                 <div className="mb-2 flex items-center">
                   <Globe className="mr-2 h-4 w-4 text-gray-400" />
                   <span className="text-sm font-medium text-gray-400">
-                    Public
+                    Public Id
                   </span>
                 </div>
                 <div className="bg-black rounded-lg p-3 break-all font-mono text-sm">

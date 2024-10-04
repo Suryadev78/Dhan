@@ -12,18 +12,7 @@ export default function MnemonicDisplay({
   Mnemonic: string;
 }) {
   const [copied, setCopied] = useState(false);
-  const [mnemonic, setMnemonic] = useState<string[]>([]);
   const generatedMnemonic = Mnemonic;
-
-  useEffect(() => {
-    const storedmnemonic = localStorage.getItem("mnemonic");
-    if (storedmnemonic) {
-      setMnemonic(storedmnemonic.split(", "));
-    } else if (words.length > 0) {
-      localStorage.setItem("mnemonic", words.join(", "));
-      setMnemonic(words);
-    }
-  }, [words]);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(words.join(", ")); // Join array into a string

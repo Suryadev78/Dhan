@@ -1,5 +1,6 @@
 "use client";
 import Footer from "./components/footer";
+// import Footer from "./components/footer";
 import MnemonicDisplay from "./components/MnemonicDisplay";
 import Header from "./components/Typewrite";
 import { useState } from "react";
@@ -10,11 +11,13 @@ export default function Home() {
 
   return (
     <div className=" h-full bg-black ">
+      <div className="flex justify-center md:justify-end  ">
+        <Footer />
+      </div>
       <Header setMnemonic={setMnemonic} />
       {mnemonic.length > 0 && (
         <MnemonicDisplay words={words} Mnemonic={mnemonic} />
       )}
-      <Footer />
     </div>
   );
 }
