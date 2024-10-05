@@ -15,6 +15,9 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Project-Dhan",
+  icons: {
+    icon: "/img/dhan.png",
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/img/dhan.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
