@@ -23,6 +23,7 @@ function SolanaWalletComponent({
   const [publicKeys, setPublicKeys] = useState<(string | PublicKey)[]>([]);
   const [seed, setSeed] = useState("");
   const [accountBalance, setAccountBalance] = useState<number[]>([]);
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null); // Added to track the index of the copied wallet
 
   useEffect(() => {
     if (!seed) {
@@ -60,12 +61,10 @@ function SolanaWalletComponent({
     }
   };
 
-  const [copied, setCopied] = useState(false);
-
-  const copyToClipboard = (publicKey: string) => {
+  const copyToClipboard = (index: number, publicKey: string) => {
     navigator.clipboard.writeText(publicKey);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedIndex(index); // Set the index of the copied wallet
+    setTimeout(() => setCopiedIndex(null), 2000); // Reset the copied index after 2 seconds
   };
 
   return (
@@ -87,18 +86,18 @@ function SolanaWalletComponent({
                     {index + 1}
                   </span>
                   <Button
-                    onClick={() => copyToClipboard(wallet.toString())}
+                    onClick={() => copyToClipboard(index, wallet.toString())}
                     variant="ghost"
                     size="sm"
                     className="text-white hover:text-white hover:bg-gray-800"
                   >
-                    {copied ? (
+                    {copiedIndex === index ? (
                       <CheckCircle className="h-4 w-4" />
                     ) : (
                       <Copy className="h-4 w-4" />
                     )}
                     <span className="sr-only">
-                      {copied ? "Copied" : "Copy public key"}
+                      {copiedIndex === index ? "Copied" : "Copy public key"}
                     </span>
                   </Button>
                 </CardTitle>
@@ -122,7 +121,7 @@ function SolanaWalletComponent({
                     SOL
                   </span>
                 </div>
-                {copied && (
+                {copiedIndex === index && (
                   <p className="text-xs mt-2 text-center animate-fade-in-down text-green-400">
                     Public key copied to clipboard!
                   </p>
