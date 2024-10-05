@@ -56,9 +56,9 @@ http://localhost:3000
 
 ## Usage
 
-1.**Generate Your Mnemonic Phrase**: Click on the "Generate Mnemonics Phrase" button to generate your mnemonic phrase. 2.**Display Your Mnemonic Phrase**: Once you have generated your mnemonic phrase, you will see your mnemonic phrase displayed on the screen. 3.**Copy Your Mnemonic Phrase**: Click on the "Copy to clipboard" button to copy your mnemonic phrase to the clipboard. 4.**Add Your Wallet**: Click on the "Add New Wallet" button to add your wallet. 5.**Display Your Wallets**: Once you have added your wallet, you will see your wallet displayed on the screen. 6.**Copy Your Wallet**: Click on the "Copy public key" button to copy your wallet to the clipboard. 7.**Display Your Wallet Balance**: Let's you see your wallet balance.
+1. **Generate Your Mnemonic Phrase**: Click on the "Generate Mnemonics Phrase" button to generate your mnemonic phrase. 2. **Display Your Mnemonic Phrase**: Once you have generated your mnemonic phrase, you will see your mnemonic phrase displayed on the screen. 3. **Copy Your Mnemonic Phrase**: Click on the "Copy to clipboard" button to copy your mnemonic phrase to the clipboard. 4. **Add Your Wallet**: Click on the "Add New Wallet" button to add your wallet. 5. **Display Your Wallets**: Once you have added your wallet, you will see your wallet displayed on the screen. 6. **Copy Your Wallet**: Click on the "Copy public key" button to copy your wallet to the clipboard. 7. **Display Your Wallet Balance**: Let's you see your wallet balance.
 
-##Future Improvements
+## Future Enhancements
 
 - **MultiChain Support**: Dhan will support multiple blockchains in the future.
 - **Send Transactions**: Dhan will allow you to send transactions to different wallets.
