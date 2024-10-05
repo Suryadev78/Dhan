@@ -10,7 +10,7 @@ export default function Home() {
   const words = mnemonic.split(" ");
 
   return (
-    <div className=" h-full bg-black ">
+    <div className=" h-screen bg-black ">
       <div className="flex justify-center md:justify-end  ">
         <Footer />
       </div>

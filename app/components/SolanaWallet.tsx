@@ -52,7 +52,6 @@ function SolanaWalletComponent({
         const formattedBalance = parseFloat(balance.toFixed(4));
         setAccountBalance((prev) => [...prev, formattedBalance]); // Append to existing balances
       } else {
-        console.log("Account balance is not available");
         setAccountBalance((prev) => [...prev, 0]); // Set to 0 if balance is not available
       }
     } catch (error) {
