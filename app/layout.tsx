@@ -14,10 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dhan",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  title: "Project-Dhan",
 };
 
 export default function RootLayout({
